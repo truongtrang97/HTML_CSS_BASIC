@@ -1,0 +1,31 @@
+/* đặt biến  */
+:root{
+    --white_color: #fff;
+    --black_color: #000;
+    --text_color :#333;
+
+
+}
+/* css trong * ap dụng cho tất cả các element được nhúng file base.css ni */
+*{
+box-sizing: inherit; 
+}
+html{
+    font-size:62.5%;
+    line-height:1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* chuẩn bị responsive */
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__gird--width{
+    width: 100%;
+}
+.grid-row{
+    display:flex;
+    flex-wrap: wrap;
+}
