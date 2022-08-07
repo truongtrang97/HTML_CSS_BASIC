@@ -321,3 +321,13 @@
 //   })
 //   console.log(newfilter)
  
+var arr = [['name', 'Sơn Đặng'], ['age', 18]]
+function arrToObj(array) {
+    var newObject = array.reduce(function(start, current) {
+//         return start = Object.assign(start, {[current[0]]: current[1]});
+return console.log([current[0]])
+    }, {})
+//     return newObject
+}
+// Expected results
+console.log(arrToObj(arr)) // Output: { name: 'Sơn Đặng', age: 18 }

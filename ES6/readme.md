@@ -58,8 +58,13 @@ ex:
 ![img](/assets/img/Screenshot%20from%202022-05-25%2016-24-51.png)
 ## Enhanced object literal
 ++ ---> viết gọn
+- Định nghĩa key : value cho object
+- Định nghĩa method cho object
+- Định nghĩa key cho object dưới dạng biến
++ khi key với value trùng nhau
 ![img](/assets/img/anhancedobjcetliterals.png)
-![img](/assets/img/enhanced2.png
++ viết gọn method cho object getfullname(){}--> viết gọn bỏ function
+![img](/assets/img/enhanced2.png)
 ![img](/assets/img/enhance3.png)
 
 ## Destructuring (phân rã)

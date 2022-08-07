@@ -40,6 +40,24 @@
                         <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
                         <span class="form-message"></span>
                       </div>
+                      <!-- ADD EXAMPLE RADIO -->
+                      <div class="form-group">
+                        <label for="password_confirmation" class="form-label">Giới tính</label>
+                        <div class="name_radio">
+                          <input  name="gender"  type="radio" value="male" class="form-control">
+                          Nữ
+                        </div>
+                        <div class="name_radio">
+                          <input  name="gender"  type="radio" value="female" class="form-control">
+                          Nam
+                        </div>
+                        <div class="name_radio">
+                          <input  name="gender"  type="radio" value="other" class="form-control">
+                          Khác
+                        </div>
+
+                        <span class="form-message"></span>
+                      </div>
                   
                       <button class="form-submit">Đăng ký</button>
                     </form>
@@ -52,14 +70,27 @@
                                       {
                                                 form:'#form-1',
                                                 errorSelector:'.form-message',
-                                                ruler: [validator.isRequest('#fullname'),// mong muon nhan ve 1 selector
-                                                       validator.isName('#email'),
-                                                       validator.islength('#password',6),
+                                                formgroupseclector:'.form-group',
+                                                ruler: [
+                                                       validator.isRequest('#fullname'),
+                                                       validator.isRequest('#fullname','Khong phai ten ban nhap lai nha'),// mong muon nhan ve 1 selector
+                                                       validator.isRequest('#email'),
+                                                      //  validator.isName('#email','Khong phai email nhap lai nha'),
+                                                       validator.isRequest('#password'),
+                                                      //  validator.isRequest('input[name="gender"]'),
+                                                       validator.islength('#password',6,'mat khau khong chinh xac'),
                                                        validator.isconfirmpass('#password_confirmation',function(){
-                                                         return 123;
-                                                       }),
+                                                         return document.querySelector('#form-1 #password').value;
+                                                       },'mat khau nhap lai khong chinh xac'),
+                                                       console.log(document.querySelector('input[name="gender"]'))
 
-                                                  ]
+                                                  ],
+                                                  // mong muon khi submit ->'dang ki'
+                                                  onSubmit: function(data){
+                                                    // call API TRONG NI Á
+                                                    console.log(data)
+                                                  }
+                                                  
                                       }
                             )
                   </script>
